@@ -172,6 +172,25 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
+					<string>storage.type.kl</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s*\(</string>
+			<key>name</key>
+			<string>meta.function.kl</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.global.kl</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
 					<string>entity.name.function.kl</string>
 				</dict>
 			</dict>
