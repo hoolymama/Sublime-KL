@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.2",
+  "packages": [
+    {
+      "name": "Creation Platform - KL Language Support",
+      "description": "Syntax highlighting for the KL programming language",
+      "author": "fabric-engine",
+      "homepage": "https://github.com/fabric-engine/Sublime-KL",
+      "last_modified": "2013-02-10 15:04:31",
+      "platforms": {
+        "*": [
+          {
+            "version": "1.0.0",
+            "url": "https://nodeload.github.com/fabric-engine/Sublime-KL/zip/1.0.0"
+          }
+        ]
+      }
+    }
+  ]
+}
