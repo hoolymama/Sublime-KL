@@ -439,7 +439,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(report|sin|cos|tan|asin|acos|atan|atan2|log|log10|exp|pow|round|floor|ceil)\b</string>
+			<string>\b(report|sqrt|abs|sin|cos|tan|asin|acos|atan|atan2|log|log10|exp|pow|round|floor|ceil)\b</string>
 			<key>name</key>
 			<string>support.function.math.kl</string>
 		</dict>
