@@ -727,7 +727,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>&lt;&lt;&lt;|&gt;&gt;&gt;|\[\[\[\[|\]\]\]</string>
+			<string>&lt;&lt;&lt;|&gt;&gt;&gt;</string>
 			<key>name</key>
 			<string>meta.brace.parallel.kl</string>
 		</dict>
