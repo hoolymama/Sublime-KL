@@ -49,9 +49,24 @@
 					<key>name</key>
 					<string>keyword.operator.kl</string>
 				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.js</string>
+				</dict>
+				<key>8</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)\(</string>
+			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()(.*?)(\))</string>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
@@ -235,7 +250,7 @@
 			<key>match</key>
 			<string>\b(struct|object)\s+([a-zA-Z_][a-zA-Z0-9_]*)</string>
 			<key>name</key>
-			<string>meta.function.kl</string>
+			<string>meta.structure.kl</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -260,7 +275,7 @@
 			<key>match</key>
 			<string>\b([a-zA-Z_][a-zA-Z0-9_]*)\s+(in)\b</string>
 			<key>name</key>
-			<string>meta.function.kl</string>
+			<string>meta.loop.in.kl</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -277,9 +292,9 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\b</string>
+			<string>\b([A-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\b</string>
 			<key>name</key>
-			<string>meta.function.kl</string>
+			<string>meta.variable.kl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -432,29 +447,10 @@
 			<string>comment.line.double-slash.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>variable.kl</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.kl</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*\(</string>
-			<key>name</key>
-			<string>meta.method.call.kl</string>
-		</dict>
-		<dict>
 			<key>match</key>
 			<string>\b(Boolean|UInt8|SInt8|UInt16|SInt16|UInt32|SInt32|UInt64|SInt64|Float32|Float64|String|Container|Index|Size|Integer|Scalar)\b</string>
 			<key>name</key>
-			<string>storage.type.builtin.kl</string>
+			<string>support.type.kl</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -485,30 +481,6 @@
 			<string>(&lt;&lt;&lt;|&gt;&gt;&gt;|\bexecuteParallel\b)</string>
 			<key>name</key>
 			<string>keyword.parallel.kl</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.kl</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>([A-Z][A-Za-z0-9_]*)\s*\(</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.kl</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>([a-z_][A-Za-z0-9_]*)\s*\(</string>
 		</dict>
 		<dict>
 			<key>match</key>
