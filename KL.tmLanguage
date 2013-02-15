@@ -18,11 +18,58 @@
 	<string>KL</string>
 	<key>repository</key>
 	<dict>
+		<key>parameter</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.global.kl</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.user.kl</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.kl</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\b(in|io)\s+([A-Z_][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.user.kl</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.kl</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\b([A-Z_][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -54,24 +101,31 @@
 					<key>name</key>
 					<string>punctuation.definition.parameters.begin.kl</string>
 				</dict>
-				<key>7</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.function.js</string>
-				</dict>
-				<key>8</key>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()(.*?)(\))</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -93,14 +147,36 @@
 					<key>name</key>
 					<string>keyword.operator.kl</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -117,14 +193,36 @@
 					<key>name</key>
 					<string>entity.name.function.kl</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s+([A-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -146,14 +244,36 @@
 					<key>name</key>
 					<string>entity.name.function.kl</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s+(\+|-|\*|/|%)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -170,14 +290,36 @@
 					<key>name</key>
 					<string>keyword.operator.kl</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+(\+|-|\*|/|%)\s*\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -189,14 +331,77 @@
 					<key>name</key>
 					<string>storage.type.kl</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s*\(</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(function|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.global.kl</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.kl</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
+			<key>name</key>
+			<string>meta.function.kl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(function|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -209,27 +414,23 @@
 					<string>entity.name.function.kl</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function|operator)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\(</string>
-			<key>name</key>
-			<string>meta.function.kl</string>
-		</dict>
-		<dict>
-			<key>captures</key>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
 			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.global.kl</string>
-				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.kl</string>
+					<string>punctuation.definition.parameters.end.kl</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(function|operator)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\(</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
 			<key>name</key>
 			<string>meta.function.kl</string>
 		</dict>
