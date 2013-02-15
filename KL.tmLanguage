@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>comment</key>
-	<string>KL Syntax: version 2.0</string>
+	<string>KL Syntax: version 1.1.1</string>
 	<key>fileTypes</key>
 	<array>
 		<string>kl</string>
@@ -18,17 +18,59 @@
 	<string>KL</string>
 	<key>repository</key>
 	<dict>
+		<key>comment</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>/\*\*(?!/)</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.kl</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.block.documentation.kl</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>/\*</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.kl</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.block.kl</string>
+				</dict>
+			</array>
+		</dict>
 		<key>parameter</key>
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
 				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.global.kl</string>
+							<string>storage.modifier.kl</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -63,18 +105,45 @@
 				</dict>
 			</array>
 		</dict>
+		<key>member</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$base</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.kl</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.kl</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\b([A-Z_][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.global.kl</string>
+					<string>keyword.kl</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -435,23 +504,45 @@
 			<string>meta.function.kl</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(struct|object)\s+([A-Z_][a-zA-Z0-9_]*)\s*({)</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.global.kl</string>
+					<string>storage.modifier.kl</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.user.kl</string>
+					<string>entity.name.type.kl</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>\b(struct|object)\s+([a-zA-Z_][a-zA-Z0-9_]*)</string>
+			<key>end</key>
+			<string>(});</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#member</string>
+				</dict>
+			</array>
 			<key>name</key>
-			<string>meta.structure.kl</string>
+			<string>meta.function.kl</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -602,36 +693,8 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>/\*\*(?!/)</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.kl</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\*/</string>
-			<key>name</key>
-			<string>comment.block.documentation.kl</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>/\*</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.kl</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\*/</string>
-			<key>name</key>
-			<string>comment.block.kl</string>
+			<key>include</key>
+			<string>#comment</string>
 		</dict>
 		<dict>
 			<key>captures</key>
