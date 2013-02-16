@@ -65,6 +65,8 @@
 					<string>#comment</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\b(in|io)\s+([A-Z][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -83,10 +85,10 @@
 							<string>variable.parameter.kl</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>\b(in|io)\s+([A-Z_][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\b([A-Z][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -100,10 +102,13 @@
 							<string>variable.parameter.kl</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>\b([A-Z_][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 				</dict>
 			</array>
+		</dict>
+		<key>memberName</key>
+		<dict>
+			<key>match</key>
+			<string>\b\b</string>
 		</dict>
 		<key>member</key>
 		<dict>
@@ -114,6 +119,8 @@
 					<string>$base</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\b([A-Z][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -124,11 +131,14 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>variable.kl</string>
+							<string>punctuation.definition.memberNames.begin.kl</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.kl</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>\b([A-Z_][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 				</dict>
 			</array>
 		</dict>
@@ -137,7 +147,7 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s+([A-Z][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -172,10 +182,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -193,7 +203,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -223,10 +233,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -269,10 +279,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -320,10 +330,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -366,10 +376,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -407,10 +417,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -448,46 +458,10 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)</string>
+			<string>(\))</string>
 			<key>endCaptures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.end.kl</string>
-				</dict>
-			</dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#parameter</string>
-				</dict>
-			</array>
-			<key>name</key>
-			<string>meta.function.kl</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>\b(function|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
-			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.global.kl</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.kl</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.end.kl</string>
@@ -542,7 +516,7 @@
 				</dict>
 			</array>
 			<key>name</key>
-			<string>meta.function.kl</string>
+			<string>meta.type.kl</string>
 		</dict>
 		<dict>
 			<key>match</key>
