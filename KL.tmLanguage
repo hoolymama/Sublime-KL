@@ -484,6 +484,62 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>\b(operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(&lt;&lt;&lt;)\s*([a-z_][a-zA-Z0-9_]*)\s*(&gt;&gt;&gt;)\s*(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.global.kl</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.kl</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.parallel.kl</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.kl</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.parallel.kl</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
+			<key>name</key>
+			<string>meta.function.kl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>\b(function|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
