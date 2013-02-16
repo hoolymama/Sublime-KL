@@ -438,6 +438,52 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>\b(function)\s+(~)([A-Z][a-zA-Z0-9_]*)\s*(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.global.kl</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.kl</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.kl</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.kl</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.kl</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#parameter</string>
+				</dict>
+			</array>
+			<key>name</key>
+			<string>meta.function.kl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>\b(function|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -499,7 +545,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(});</string>
+			<string>(})\s*;</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -558,7 +604,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b([A-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\b</string>
+			<string>\b([A-Z][a-zA-Z0-9_]*)\s+([a-z_][a-zA-Z0-9_]*)\b</string>
 			<key>name</key>
 			<string>meta.variable.kl</string>
 		</dict>
@@ -692,9 +738,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(report|sqrt|abs|sin|cos|tan|asin|acos|atan|atan2|log|log10|exp|pow|round|floor|ceil)\b</string>
+			<string>\b(sqrt|abs|sin|cos|tan|asin|acos|atan|atan2|log|log10|exp|pow|round|floor|ceil)\b</string>
 			<key>name</key>
 			<string>support.function.math.kl</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(report|setError|getError|clearError)\b</string>
+			<key>name</key>
+			<string>support.function.debug.kl</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -704,13 +756,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(GL_ELEMENT_ARRAY_BUFFER|GL_STATIC_DRAW|GL_UNSIGNED_INT|GL_TEXTURE_2D|GL_RGBA8|GL_RGBA|GL_UNSIGNED_BYTE|GL_NEAREST|GL_CLAMP_TO_EDGE|GL_CLAMP_TO_EDGE)\b</string>
+			<string>\b(GL_ELEMENT_ARRAY_BUFFER|GL_STATIC_DRAW|GL_UNSIGNED_INT|GL_TEXTURE_2D|GL_RGBA8|GL_RGBA|GL_UNSIGNED_BYTE|GL_NEAREST|GL_CLAMP_TO_EDGE|GL_CLAMP_TO_EDGE|GL_FLOAT|GL_ARRAY_BUFFER)\b</string>
 			<key>name</key>
 			<string>support.constant.opengl.kl</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(glBindTexture)\b</string>
+			<string>\b(glBindTexture|glDeleteFramebuffers)\b</string>
 			<key>name</key>
 			<string>support.function.opengl.kl</string>
 		</dict>
