@@ -9,7 +9,7 @@
 		<string>kl</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>^.*\b(function|operator)\s*(\w+\s*)?\([^\)]*\)(\s*\{[^\}]*)?\s*$</string>
+	<string>^.*\b(inline|function|operator)\s*(\w+\s*)?\([^\)]*\)(\s*\{[^\}]*)?\s*$</string>
 	<key>foldingStopMarker</key>
 	<string>^\s*\}</string>
 	<key>keyEquivalent</key>
@@ -147,7 +147,7 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s+([A-Z][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<string>\b(function|inline)\s+([A-Z][a-zA-Z0-9_]*)\s+([A-Z][a-zA-Z0-9_]*)\s*\.\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -203,7 +203,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
+			<string>\b(function|inline)\s+([A-Z][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*([?!]?)(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -254,7 +254,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<string>\b(function|inline)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -300,7 +300,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s+([A-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<string>\b(function|inline)\s+([A-Z_][a-zA-Z0-9_]*)\s+([A-Z_][a-zA-Z0-9_]*)\s*\.\s*([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -351,7 +351,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z_][a-zA-Z0-9_]*)\s+(\+|-|\*|/|%)\s*(\()</string>
+			<string>\b(function|inline)\s+([A-Z_][a-zA-Z0-9_]*)\s+(\+|-|\*|/|%)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -397,7 +397,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+([A-Z][a-zA-Z0-9_]*)\s*(\()</string>
+			<string>\b(function|inline)\s+([A-Z][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -438,7 +438,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s+(~)([A-Z][a-zA-Z0-9_]*)\s*(\()</string>
+			<string>\b(function|inline)\s+(~)([A-Z][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -540,7 +540,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(function|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
+			<string>\b(function|inline|operator)\s+([a-z_][a-zA-Z0-9_]*)\s*(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -622,7 +622,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(function|operator|struct|object|alias|use|require|break|case|continue|default|const|var|in|io|do|else|for|if|use|require|return|switch|throw|while)\b</string>
+			<string>\b(function|inline|operator|struct|object|alias|use|require|break|case|continue|default|const|var|in|io|do|else|for|if|use|require|return|switch|throw|while)\b</string>
 			<key>name</key>
 			<string>keyword.kl</string>
 		</dict>
