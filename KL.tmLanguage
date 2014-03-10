@@ -581,7 +581,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(struct|object)\s+([A-Z_][a-zA-Z0-9_]*)\s*({)</string>
+			<string>\b(struct|object|interface)\s+([A-Z_][a-zA-Z0-9_]*)\s*({)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -592,7 +592,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.kl</string>
+					<string>storage.type.user.kl</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -622,7 +622,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(function|inline|operator|struct|object|alias|use|require|break|case|continue|default|const|var|in|io|do|else|for|if|use|require|return|switch|throw|while)\b</string>
+			<string>\b(function|inline|operator|struct|object|interface|alias|use|require|break|case|continue|default|const|var|in|io|do|else|for|if|use|require|return|switch|throw|while)\b</string>
 			<key>name</key>
 			<string>keyword.kl</string>
 		</dict>
