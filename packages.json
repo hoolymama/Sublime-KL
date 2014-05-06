@@ -10,8 +10,8 @@
       "platforms": {
         "*": [
           {
-            "version": "1.1.5",
-            "url": "https://nodeload.github.com/fabric-engine/Sublime-KL/zip/1.1.5"
+            "version": "1.1.9",
+            "url": "https://nodeload.github.com/fabric-engine/Sublime-KL/zip/1.1.9"
           }
         ]
       }
